@@ -1,5 +1,18 @@
 {
+  "name": "matrix-clock",
+  "description": "RGB LED Matrix clock",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "rpi-led-matrix": "^1.14.0"
+  },
+  "scripts": {
+    "build-service": "npm run clean && tsc -p service-src",
+    "compile-service": "tsc -p service-src",
+    "clean-service": "rm -rf service-src/dist",
+    "play-service": "sudo node service-src/dist/main.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1"
   }
 }
